@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little World of Us ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+ font-family:'Poppins',sans-serif;
+ background:linear-gradient(135deg,#fff0f3,#ffe0e9,#fce4ec);
+ color:#74394e;
+ text-align:center;
+ overflow-x:hidden;
+}
+section{padding:75px 20px}
+.hero{
+ min-height:100vh;display:flex;flex-direction:column;
+ justify-content:center;align-items:center;
+ position:relative;
+}
+h1{
+ font-family:'Playfair Display',serif;
+ font-size:clamp(40px,8vw,70px);
+ color:#b8325c;
+}
+h2{
+ font-family:'Playfair Display',serif;
+ font-size:35px;margin-bottom:20px;
+ color:#b8325c;
+}
+p{line-height:1.9;font-size:15px}
+.heart{font-size:65px;animation:beat 1.2s infinite}
+@keyframes beat{50%{transform:scale(1.2)}}
+.btn{
+ border:0;background:#c83e68;color:white;
+ padding:14px 28px;border-radius:30px;
+ margin-top:25px;font-size:15px;
+ cursor:pointer;box-shadow:0 5px 15px #d98ca5;
+}
+.btn:hover{transform:scale(1.06)}
+.card{
+ max-width:650px;margin:25px auto;
+ background:#ffffffb8;padding:35px;
+ border-radius:25px;
+ box-shadow:0 8px 30px #dba5b5;
+}
+.letter{font-family:'Playfair Display',serif;font-size:20px;line-height:2}
+.gallery{
+ display:flex;justify-content:center;gap:15px;
+ flex-wrap:wrap;margin-top:25px;
+}
+.photo{
+ width:180px;height:210px;
+ border-radius:20px;object-fit:cover;
+ background:#f5cad8;
+ border:5px solid white;
+}
+.surprise{display:none;margin-top:25px}
+footer{padding:30px;color:#a34b68}
+.floating{
+ position:fixed;bottom:-30px;
+ animation:float 7s linear infinite;
+ pointer-events:none;z-index:10;
+}
+@keyframes float{
+ to{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+ <div class="heart">❤️</div>
+ <p>A little surprise for someone special...</p>
+ <h1>My Favourite Person</h1>
+ <p>You make my ordinary days feel magical. ✨</p>
+ <button class="btn" onclick="document.getElementById('love').scrollIntoView({behavior:'smooth'})">
+ Open Your Surprise 💌
+ </button>
+</section>
+
+<section id="love">
+ <h2>Hey, My Love! 💗</h2>
+ <div class="card">
+  <p>
+   If I could choose one person to have in my life
+   over and over again, I would choose you.
+   Not just today, not just tomorrow, but in every
+   lifetime and in every possible universe. 🥹
+  </p>
+  <p style="margin-top:20px">
+   You are my favourite notification, my happiest thought
+   and my sweetest reason to smile.
+  </p>
+ </div>
+</section>
+
+<section>
+ <h2>A Little Love Letter 💌</h2>
+ <div class="card letter">
+  My Dearest Love,<br><br>
+  I don't know how to explain what you mean to me.
+  Sometimes I just look at you and feel lucky that
+  someone like you exists in my world.
+  <br><br>
+  I love your little habits, your smile, your way
+  of making me happy without even trying.
+  <br><br>
+  I may not be perfect, but my feelings for you
+  are real. I want to share my silly moments,
+  beautiful memories, random conversations and
+  countless tomorrows with you.
+  <br><br>
+  No matter how difficult life gets, I hope we
+  always find our way back to each other.
+  <br><br>
+  Forever a little more in love with you. ❤️
+ </div>
+</section>
+
+<section>
+ <h2>Our Little Universe 🌙</h2>
+ <p>Every beautiful memory deserves a special place.</p>
+ <div class="gallery">
+  <img class="photo" src="https://placehold.co/300x350/f8cbd9/9b3458?text=Your+Photo+1">
+  <img class="photo" src="https://placehold.co/300x350/f5d6e2/9b3458?text=Your+Photo+2">
+  <img class="photo" src="https://placehold.co/300x350/f8cbd9/9b3458?text=Your+Photo+3">
+ </div>
+ <p style="margin-top:20px">Replace these with your favourite pictures together. 🥰</p>
+</section>
+
+<section>
+ <h2>One Last Surprise 🎀</h2>
+ <p>I have something special to tell you...</p>
+ <button class="btn" onclick="showLove()">Click Me, Baby ❤️</button>
+
+ <div class="card surprise" id="surprise">
+  <div class="heart">💝</div>
+  <h2>You Are My Person!</h2>
+  <p>
+   Out of all the people in this world,
+   my heart found its favourite in YOU.
+   <br><br>
+   I don't just want beautiful days with you.
+   I want all the ordinary days too.
+   <br><br>
+   I LOVE YOU SO MUCH! ❤️
+  </p>
+ </div>
+</section>
+
+<footer>
+ Made with endless love, just for you. 💗
+ <br>Forever & Always ♾️
+</footer>
+
+<script>
+function showLove(){
+ document.getElementById('surprise').style.display='block';
+ document.getElementById('surprise').scrollIntoView({behavior:'smooth'});
+}
+
+function createHeart(){
+ const heart=document.createElement('div');
+ heart.className='floating';
+ heart.innerHTML=['❤️','💕','💗','🌸','✨'][Math.floor(Math.random()*5)];
+ heart.style.left=Math.random()*100+'vw';
+ heart.style.fontSize=(15+Math.random()*20)+'px';
+ heart.style.animationDuration=(4+Math.random()*5)+'s';
+ document.body.appendChild(heart);
+ setTimeout(()=>heart.remove(),9000);
+}
+setInterval(createHeart,600);
+</script>
+
+</body>
+</html>
